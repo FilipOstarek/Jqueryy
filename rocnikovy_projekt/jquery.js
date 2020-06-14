@@ -649,6 +649,20 @@ $('div[id="kraje2"] path').on('click', function () {
     $('div[class="popis"]').html(clanky[3].nadpis).append(clanky[3].mapa).append(clanky[3].text);
     $('div[class="popis"]').hide(0);
     $('div[class="popis"]').show(1000);
+    $('div[id="SVG"] path').on('mouseover', function () {
+        $(this).css('fill', '#0275d8');
+        console.log(this.id);
+    });
+    $('div[id="SVG"] path').on('mouseleave', function () {
+        $(this).css('fill', '#292b2c');
+    });
+    $('div[id="SVG"] circle').on('mouseover', function () {
+        $(this).css('fill', '#292b2c');
+    });
+    $('div[id="SVG"] circle').on('mouseleave', function () {
+        $('circle').css('fill', '#0275d8');
+        $('circle[id="atheny"]').css('fill', '#eb347a');
+    });
 });
 $('h4[class="text-center H l8"]').bind('click', function () {
     $('div[class="popis"]').html();
